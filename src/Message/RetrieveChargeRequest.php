@@ -60,7 +60,7 @@ class RetrieveChargeRequest extends AbstractRequest
         $headers = [
             'Content-Type' => 'application/json',
             'X-CC-Api-Key' => $this->getAccessToken(),
-            'X-CC-Version' => $this->getVersion(),
+            'X-CC-Version' => $this->getApiVersion(),
         ];
 
         $httpResponse = $this->httpClient->request(

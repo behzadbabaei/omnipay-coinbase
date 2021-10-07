@@ -72,8 +72,8 @@ class ChargeRequest extends AbstractRequest
                 "amount"   => $this->getAmount(),
                 "currency" => $this->getCurrency()
             ],
-            "pricing_type" => $this->getPricingType(),
-            "metadata"     => $this->getCustomData(),
+            "pricing_type" => $this->getPricingType() ?? self::PRICING_TYPE_FIXED_PRICE,
+            "metadata"     => $this->getCustomData() ?? [],
             "redirect_url" => $this->getReturnUrl(),
             "cancel_url"   => $this->getCancelUrl(),
         ]);
@@ -91,7 +91,7 @@ class ChargeRequest extends AbstractRequest
         $headers = [
             'Content-Type' => 'application/json',
             'X-CC-Api-Key' => $this->getAccessToken(),
-            'X-CC-Version' => $this->getVersion(),
+            'X-CC-Version' => $this->getApiVersion(),
         ];
 
         $httpResponse = $this->httpClient->request(

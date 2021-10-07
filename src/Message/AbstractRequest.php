@@ -51,25 +51,25 @@ abstract class AbstractRequest extends BaseAbstractRequest
     }
 
     /**
-     * Sets the request version.
+     * Set apiVersion
      *
-     * @param string $value
+     * @param array $value
      *
      * @return $this
      */
-    public function setVersion($value)
+    public function setApiVersion(array $value)
     {
-        return $this->setParameter('version', $value);
+        return $this->setParameter('apiVersion', $value);
     }
 
     /**
-     * Get the request version.
+     * Get custom apiVersion
      *
      * @return mixed
      */
-    public function getVersion()
+    public function getApiVersion()
     {
-        return $this->getParameter('version');
+        return $this->getParameter('apiVersion');
     }
 
     /**

@@ -91,6 +91,28 @@ class Gateway extends AbstractGateway
     }
 
     /**
+     * Set apiVersion
+     *
+     * @param array $value
+     *
+     * @return $this
+     */
+    public function setApiVersion(array $value)
+    {
+        return $this->setParameter('apiVersion', $value);
+    }
+
+    /**
+     * Get custom apiVersion
+     *
+     * @return mixed
+     */
+    public function getApiVersion()
+    {
+        return $this->getParameter('apiVersion');
+    }
+
+    /**
      * Create a purchase request
      *
      * @param array $options

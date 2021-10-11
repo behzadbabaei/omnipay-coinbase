@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Omnipay\Coinbase\Commerce\Message;
+namespace Omnipay\CoinbaseCommerce\Message;
 
 use function array_merge;
 use function json_encode;
@@ -10,7 +10,7 @@ use function json_encode;
 /**
  * Class CancelChargeRequest
  *
- * @package Omnipay\Coinbase\Commerce\Message
+ * @package Omnipay\CoinbaseCommerce\Message
  */
 class CancelChargeRequest extends AbstractRequest
 {

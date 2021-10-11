@@ -2,11 +2,11 @@
 
 declare(strict_types = 1);
 
-namespace Omnipay\Coinbase\Commerce;
+namespace Omnipay\CoinbaseCommerce;
 
-use Omnipay\Coinbase\Commerce\Message\CancelChargeRequest;
-use Omnipay\Coinbase\Commerce\Message\ChargeRequest;
-use Omnipay\Coinbase\Commerce\Message\RetrieveChargeRequest;
+use Omnipay\CoinbaseCommerce\Message\CancelChargeRequest;
+use Omnipay\CoinbaseCommerce\Message\ChargeRequest;
+use Omnipay\CoinbaseCommerce\Message\RetrieveChargeRequest;
 use Omnipay\Common\AbstractGateway;
 
 /**
@@ -75,7 +75,7 @@ class Gateway extends AbstractGateway
      *
      * @return $this
      */
-    public function setCustomData(array $value)
+    public function setCustomData($value)
     {
         return $this->setParameter('customData', $value);
     }
@@ -93,11 +93,11 @@ class Gateway extends AbstractGateway
     /**
      * Set apiVersion
      *
-     * @param array $value
+     * @param string $value
      *
      * @return $this
      */
-    public function setApiVersion(array $value)
+    public function setApiVersion(string $value)
     {
         return $this->setParameter('apiVersion', $value);
     }
@@ -123,7 +123,7 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest(ChargeRequest::class, $options);
     }
-    
+
     /**
      * Create a retrieve order request
      *
@@ -135,7 +135,7 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest(RetrieveChargeRequest::class, $options);
     }
-    
+
     /**
      * Create a cancel request
      *

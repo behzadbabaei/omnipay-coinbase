@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Omnipay\Coinbase\Commerce\Message;
+namespace Omnipay\CoinbaseCommerce\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
@@ -17,7 +17,7 @@ use function end;
  *
  * This is the response class for all Revolut requests.
  *
- * @see \Omnipay\Coinbase\Commerce\Gateway
+ * @see \Omnipay\CoinbaseCommerce\Gateway
  */
 class Response extends AbstractResponse implements RedirectResponseInterface
 {
@@ -159,8 +159,6 @@ class Response extends AbstractResponse implements RedirectResponseInterface
 
     /**
      * Get the orderStatus.
-     *
-     *
      *  [
      * {
      * "time": "2017-01-31T20:49:02Z",
@@ -186,9 +184,9 @@ class Response extends AbstractResponse implements RedirectResponseInterface
      * ]
      *
      *
-     * @return |null
+     * @return string|null
      */
-    public function getOrderStatus()
+    public function getOrderStatus() : ?string
     {
         if (isset($this->data['timeline'])) {
             return end($this->data['timeline'])['status'];

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Omnipay\Coinbase\Commerce\Message;
+namespace Omnipay\CoinbaseCommerce\Message;
 
 use function array_merge;
 use function json_encode;

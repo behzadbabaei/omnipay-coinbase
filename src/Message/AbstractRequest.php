@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Omnipay\Coinbase\Commerce\Message;
+namespace Omnipay\CoinbaseCommerce\Message;
 
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
 
@@ -53,11 +53,11 @@ abstract class AbstractRequest extends BaseAbstractRequest
     /**
      * Set apiVersion
      *
-     * @param array $value
+     * @param string $value
      *
      * @return $this
      */
-    public function setApiVersion(array $value)
+    public function setApiVersion(string $value)
     {
         return $this->setParameter('apiVersion', $value);
     }

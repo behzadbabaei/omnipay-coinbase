@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Omnipay\Coinbase\Commerce\Message;
+namespace Omnipay\CoinbaseCommerce\Message;
 
 use function array_merge;
 use function json_encode;
@@ -10,7 +10,7 @@ use function json_encode;
 /**
  * Class ChargeRequest
  *
- * @package Omnipay\Coinbase\Commerce\Message
+ * @package Omnipay\CoinbaseCommerce\Message
  */
 class ChargeRequest extends AbstractRequest
 {
@@ -61,7 +61,7 @@ class ChargeRequest extends AbstractRequest
      * @return array
      * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
-    public function getData()
+    public function getData() : array
     {
         $this->validate('name', 'description', 'currency', 'amount');
 

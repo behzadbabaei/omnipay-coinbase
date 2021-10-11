@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Omnipay\Revolut;
+namespace Omnipay\CoinbaseCommerce;
 
 use Mockery as m;
 use Omnipay\Omnipay;

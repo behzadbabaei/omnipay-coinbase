@@ -36,85 +36,56 @@ Or you can simply run
 
 ```php
 
+        $gateway = Omnipay::create('CoinbaseCommerce');
+
+        $gateway->setAccessToken('your-api-key');
+        $gateway->setApiVersion('your-api-version');
+        $gateway->setLanguage(App::getLocale());
+
 ```
 
-# Creating an order
+# Creating an charge order
 Call purchase, it will return the response which includes the public_id for further process.
-Please refer to the [Developer Document]() for more information.
+Please refer to the [Developer Document](https://commerce.coinbase.com/docs/api/#create-a-charge) for more information.
 
 ```php
+            $redirectUrl = 'success-url'
+            $cancelUrl = 'cancel-url'
 
-```
+            $metaData = [
+                'orderId' => $data['orderId']
+            ];
 
-OR
-
-```php
-ww
-```
-
-# Capture an order
-Please refer to the [Developer Document]() for more information.
-
-```php
-
-```
-
-OR
-
-```php
-
-```
-
-# Confirm an order
-Please refer to the [Developer Document]() for more information.
-
-```php
-
-```
-
-OR
-
-```php
-
-```
-
-# Refund an order
-Please refer to the [Developer Document]() for more information.
-
-```php
-
-```
-
-OR
-
-```php
-
+            return $this->gateway->purchase([
+                'name'        => $data['name'],
+                'description' => $data['description'],
+                'amount'      => $data['amount'],
+                'currency'    => $data['currency'],
+                'customData'  => $metaData,
+                'redirectUrl' => $redirectUrl,
+                'cancelUrl'   => $cancelUrl,
+            ])->send()->getData();
 ```
 
 # Cancel an order
-Please refer to the [Developer Document]() for more information.
+Please refer to the [Developer Document](https://commerce.coinbase.com/docs/api/#cancel-a-charge) for more information.
 
 ```php
-
-```
-
-OR
-
-```php
-
+       return $this->gateway->cancel([
+              'orderId' => $orderId
+            ])->send()->getData();
+        } catch (Throwable $exception) {
+            return null;
+        }
 ```
 
 # Retrieve an order
-Please refer to the [Developer Document]() for more information.
+Please refer to the [Developer Document](https://commerce.coinbase.com/docs/api/#show-a-charge) for more information.
 
 ```php
-
-```
-
-OR
-
-```php
-
+        return $this->gateway->fetchTransaction([
+            'orderId' => $orderId
+        ])->send()->getData();
 ```
 
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)

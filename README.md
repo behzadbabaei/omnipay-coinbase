@@ -32,7 +32,7 @@ Or you can simply run
     use Omnipay\Omnipay;
 ```
 
-2. Initialize Revolut gateway:
+2. Initialize CoinbaseCommerce gateway:
 
 ```php
 

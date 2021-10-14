@@ -1,6 +1,6 @@
 {
   "name": "behzadbabaei/omnipay-coinbase-commerce",
-  "description": "Revolut driver for the Omnipay payment processing library",
+  "description": "Coinbase Commerce driver for the Omnipay payment processing library",
   "keywords": [
     "omnipay",
     "coinbase"

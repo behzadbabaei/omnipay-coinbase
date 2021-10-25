@@ -94,7 +94,6 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->getParameter('name');
     }
 
-
     /**
      * Sets the request pricingType.
      *
